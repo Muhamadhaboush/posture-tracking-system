@@ -16,6 +16,7 @@ This project is a wearable posture tracking system developed for the Microproces
 - 1x Buzzer (For audible warnings)
 - Elastic band (For the wearable apparatus)
 - Jumper wires and power supply
+- 1x Button (for starts calibration)
 
 ## Project Images
 
