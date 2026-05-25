@@ -1,32 +1,37 @@
 # Posture Tracking System
 
-Bu proje, Mikroişlemciler dersi kapsamında geliştirilmiş giyilebilir bir postür (duruş) takip sistemidir. Sistem, kullanıcının duruşunu sürekli olarak izler ve yanlış bir duruş (kambur durma vb.) algıladığında sesli uyarı vererek kullanıcının duruşunu düzeltmesini sağlar.
+This project is a wearable posture tracking system developed for the Microprocessors course. The system continuously monitors the user's posture and provides an audible warning when it detects an incorrect posture (e.g., slouching), prompting the user to correct their stance.
 
-## Özellikler
+## Features
 
-- **Çoklu Sensör Verisi:** İki adet MPU6050 (İvmeölçer ve Jiroskop) ve bir adet Flex (Esneme) sensörü kullanılarak vücut hareketleri ve omurga eğriliği hassas bir şekilde ölçülür.
-- **Giyilebilir Tasarım:** Sensörler esnek bir lastik bant üzerine dikilerek vücuda rahatça giyilebilir ve günlük kullanıma uygun hale getirilmiştir.
-- **Anında Geri Bildirim:** Belirlenen eşik değerlerinin dışında bir duruş algılandığında sistem üzerindeki Buzzer aracılığıyla anında sesli uyarı verilir.
+- **Multi-Sensor Data:** Precisely measures body movements and spinal curvature using two MPU6050 (Accelerometer and Gyroscope) sensors and one Flex sensor.
+- **Wearable Design:** The sensors are sewn onto a flexible elastic band, making it comfortable to wear and suitable for daily use.
+- **Instant Feedback:** When a posture outside the defined threshold values is detected, the system immediately provides an audible warning via the built-in Buzzer.
 
-## Kullanılan Donanımlar
+## Hardware Used
 
-- 1x Arduino Uno (Ana kontrolcü)
-- 2x MPU6050 (İvmeölçer ve Jiroskop sensörü)
-- 1x Flex Sensör (Esneme/Bükülme sensörü)
-- 1x Buzzer (Sesli uyarı için)
-- Lastik bant (Giyilebilir aparat için)
-- Jumper kablolar ve güç kaynağı
+- 1x Arduino Uno (Main controller)
+- 2x MPU6050 (Accelerometer and Gyroscope sensor)
+- 1x Flex Sensor (Bend/Flex sensor)
+- 1x Buzzer (For audible warnings)
+- Elastic band (For the wearable apparatus)
+- Jumper wires and power supply
 
-## Proje İçeriği
+## Project Images
 
-- `posture_tracking_system_code/`: Arduino Uno için yazılmış C++ kaynak kodları.
-- `postur_tracking_system.fzz`: Fritzing devre şeması çizimi.
-- Sunum dosyaları (`.pptx`) ve proje raporları (`.docx`).
+*(Here are some images of the project)*
+![Project Image 1](WhatsApp%20Image%202026-05-25%20at%2015.25.15%20(1).jpeg)
+![Project Image 2](WhatsApp%20Image%202026-05-25%20at%2015.25.15.jpeg)
 
-## Çalışma Mantığı
+## Project Contents
 
-1. Giyilebilir bant kullanıcının sırt bölgesine yerleştirilir.
-2. MPU6050 sensörleri kullanıcının sırtının alt ve üst bölgesindeki eğimleri ölçerken, Flex sensör omurganın ne kadar büküldüğünü algılar.
-3. Arduino Uno, bu sensörlerden gelen verileri sürekli olarak okur ve analiz eder.
-4. Eğer sensör değerleri, kullanıcının kambur veya yanlış bir postürde olduğunu gösteriyorsa (tanımlı eşik değerleri aşıldığında), Arduino Buzzer'ı tetikleyerek kullanıcıyı uyarır.
-5. Kullanıcı dik duruş pozisyonuna geri döndüğünde uyarı sesi kesilir.
+- `posture_tracking_system_code/`: C++ source code written for Arduino Uno.
+- `postur_tracking_system.fzz`: Fritzing circuit diagram.
+
+## How It Works
+
+1. The wearable band is placed on the user's back.
+2. The MPU6050 sensors measure the tilt of the upper and lower back, while the Flex sensor detects how much the spine is bending.
+3. The Arduino Uno continuously reads and analyzes data from these sensors.
+4. If the sensor values indicate that the user is slouching or in an incorrect posture (when defined thresholds are exceeded), the Arduino triggers the Buzzer to warn the user.
+5. The warning sound stops when the user returns to an upright posture.
